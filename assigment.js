@@ -25,3 +25,16 @@ const listOfProducts = [{
   }
 ];
 
+function getUniqueProductCount(products){
+    var obj = {};
+    products.forEach((el)=>{
+        if(obj[el.productName] === undefined){
+            obj[el.productName] = 1;
+        }else{
+            obj[el.productName] += 1;
+        }
+    })
+    return obj;
+}
+
+console.log(getUniqueProductCount(listOfProducts));
